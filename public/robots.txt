@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://machinerelations.ai/sitemap.xml
