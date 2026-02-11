@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     siteName: "Machine Relations",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "https://storage.googleapis.com/authoritytech-prod-assets/public/cdn/machinerelations-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Machine Relations — The Evolution of PR for the AI Era",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -20,6 +28,9 @@ export const metadata: Metadata = {
     description:
       "PR convinced humans to cover you. Machine Relations convinces machines to cite and recommend you.",
     creator: "@jaxonparrott",
+    images: [
+      "https://storage.googleapis.com/authoritytech-prod-assets/public/cdn/machinerelations-og.png",
+    ],
   },
   alternates: {
     canonical: "https://machinerelations.ai",
