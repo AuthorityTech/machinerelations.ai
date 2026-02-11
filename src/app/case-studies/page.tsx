@@ -198,12 +198,6 @@ export default function CaseStudiesPage() {
                 textDecoration: "none",
                 transition: "all 0.2s ease",
               }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.background = "var(--gold)";
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.background = "var(--accent)";
-              }}
             >
               Request Free Audit →
             </a>
