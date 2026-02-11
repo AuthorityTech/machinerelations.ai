@@ -240,21 +240,6 @@ export default function StackPage() {
           </div>
         </section>
 
-        <div className="divider" />
-
-        {/* Visual overview */}
-        <section className="section">
-          <div className="stack-overview">
-            {layers.map((l) => (
-              <a key={l.id} href={`#${l.id}`} className="stack-overview-item">
-                <span className="stack-num">{l.num}</span>
-                <span className="stack-overview-name">{l.name}</span>
-                <span className="stack-overview-tag">{l.tagline}</span>
-              </a>
-            ))}
-          </div>
-        </section>
-
         {/* Detailed layers */}
         {layers.map((l, i) => (
           <div key={l.id}>
