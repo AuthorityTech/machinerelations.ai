@@ -249,6 +249,34 @@ export default function ResearchPage() {
           </p>
         </section>
 
+        {/* Newsletter CTA */}
+        <section className="section newsletter-cta">
+          <div className="divider" />
+          <h2 style={{ fontFamily: "var(--serif)", fontSize: "1.5rem", fontWeight: 400, marginBottom: "0.75rem" }}>Get MR Intelligence Weekly</h2>
+          <p style={{ color: "var(--text-muted)", marginBottom: "1.5rem", maxWidth: "500px" }}>
+            One insight per week on Machine Relations, AI citations, and the metrics that matter in the post-search era. No noise.
+          </p>
+          <a
+            href="https://curated.authoritytech.io/#/portal/signup"
+            style={{
+              display: "inline-block",
+              padding: "0.75rem 2rem",
+              background: "var(--accent)",
+              color: "var(--bg)",
+              fontFamily: "var(--sans)",
+              fontSize: "0.85rem",
+              fontWeight: 500,
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              borderRadius: "4px",
+              transition: "all 0.2s ease",
+            }}
+          >
+            Subscribe to Curated
+          </a>
+        </section>
+
         <footer className="site-footer">
           <p>
             Machine Relations is a category created by{" "}
