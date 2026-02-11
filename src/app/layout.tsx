@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://storage.googleapis.com/authoritytech-prod-assets/public/cdn/machinerelations-og.png",
+        url: "https://storage.googleapis.com/authoritytech-prod-assets/public/cdn/mr-og.png",
         width: 1200,
         height: 630,
         alt: "Machine Relations — The Evolution of PR for the AI Era",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "PR convinced humans to cover you. Machine Relations convinces machines to cite and recommend you.",
     creator: "@jaxonparrott",
     images: [
-      "https://storage.googleapis.com/authoritytech-prod-assets/public/cdn/machinerelations-og.png",
+      "https://storage.googleapis.com/authoritytech-prod-assets/public/cdn/mr-og.png",
     ],
   },
   alternates: {
@@ -49,6 +49,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/png" href="https://storage.googleapis.com/authoritytech-prod-assets/public/cdn/mr-favicon.png" />
+        <link rel="apple-touch-icon" href="https://storage.googleapis.com/authoritytech-prod-assets/public/cdn/mr-favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
