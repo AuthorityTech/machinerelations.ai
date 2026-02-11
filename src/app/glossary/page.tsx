@@ -1,3 +1,4 @@
+import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -116,7 +117,7 @@ const categoryLabels: Record<string, string> = {
   strategy: "Strategy & Frameworks",
 };
 
-const categoryIcons: Record<string, JSX.Element> = {
+const categoryIcons: Record<string, React.ReactNode> = {
   core: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="10" />
