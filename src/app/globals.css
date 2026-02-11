@@ -30,8 +30,9 @@
    LIGHT THEME
    Triggered by system preference
    ======================================== */
+/* Light theme — toggled via class or system preference */
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not(.dark) {
     --bg: #fafaf9;
     --bg-elevated: #ffffff;
     --border: #e0e0e0;
@@ -60,6 +61,59 @@
     background: var(--accent);
     color: #fff;
   }
+}
+
+/* Explicit light class override (toggle) */
+:root.light {
+  --bg: #fafaf9;
+  --bg-elevated: #ffffff;
+  --border: #e0e0e0;
+  --text: #1a1a1f;
+  --text-muted: #4a4a58;
+  --text-dim: #6a6a78;
+  --accent: #0f8847;
+  --accent-muted: #1a7a42;
+  --gold: #8a7a30;
+  --gold-dim: #6e6228;
+}
+
+:root.light .origin-block .founder-photo {
+  border-color: #d0d0d0;
+}
+
+:root.light .comparison .mr-col {
+  color: var(--accent);
+}
+
+:root.light ::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  z-index: 100;
+}
+
+.theme-toggle:hover {
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 html {
