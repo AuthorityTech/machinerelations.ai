@@ -32,7 +32,7 @@ const terms = [
   {
     id: "citation-gap",
     term: "Citation Gap",
-    def: "The delta between a brand\u2019s traditional search ranking and its AI citation frequency. A brand can rank #1 on Google but appear in 0% of ChatGPT answers.",
+    def: "The delta between a brand's traditional search ranking and its AI citation frequency. A brand can rank #1 on Google but appear in 0% of ChatGPT answers.",
     category: "metrics",
   },
   {
@@ -44,25 +44,25 @@ const terms = [
   {
     id: "earned-authority",
     term: "Earned Authority",
-    def: "Third-party credibility signals (media placements, expert citations) that AI engines weight more heavily than brand-owned content. 82\u201389% of AI answers cite earned media.",
+    def: "Third-party credibility signals (media placements, expert citations) that AI engines weight more heavily than brand-owned content. 82–89% of AI answers cite earned media.",
     category: "core",
   },
   {
     id: "entity-optimization",
     term: "Entity Optimization",
-    def: "Structuring a brand\u2019s digital identity so AI systems can resolve, verify, and cite it consistently across platforms.",
+    def: "Structuring a brand's digital identity so AI systems can resolve, verify, and cite it consistently across platforms.",
     category: "core",
   },
   {
     id: "citation-architecture",
     term: "Citation Architecture",
-    def: "Content engineering for AI extraction \u2014 answer-first structure, quotable data points, attribution magnets.",
+    def: "Content engineering for AI extraction — answer-first structure, quotable data points, attribution magnets.",
     category: "core",
   },
   {
     id: "ai-visibility-score",
     term: "AI Visibility Score",
-    def: "A brand\u2019s measurable presence across AI platforms (ChatGPT, Perplexity, Gemini, AI Overviews). Replaces impressions as the key MR metric.",
+    def: "A brand's measurable presence across AI platforms (ChatGPT, Perplexity, Gemini, AI Overviews). Replaces impressions as the key MR metric.",
     category: "metrics",
   },
   {
@@ -86,7 +86,7 @@ const terms = [
   {
     id: "attribution-magnet",
     term: "Attribution Magnet",
-    def: "A data point or quote designed to be extracted and cited by AI engines. E.g., \u201c82\u201389% of AI answers cite earned media.\u201d",
+    def: "A data point or quote designed to be extracted and cited by AI engines. E.g., \"82–89% of AI answers cite earned media.\"",
     category: "tactics",
   },
   {
@@ -104,7 +104,7 @@ const terms = [
   {
     id: "zero-click-pr",
     term: "Zero-Click PR",
-    def: "Earned media impact that occurs without users clicking through to the source \u2014 AI engines surface the brand directly in answers.",
+    def: "Earned media impact that occurs without users clicking through to the source — AI engines surface the brand directly in answers.",
     category: "strategy",
   },
 ];
@@ -114,6 +114,38 @@ const categoryLabels: Record<string, string> = {
   metrics: "Metrics & Measurement",
   tactics: "Tactics & Optimization",
   strategy: "Strategy & Frameworks",
+};
+
+const categoryIcons: Record<string, JSX.Element> = {
+  core: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="6" />
+      <circle cx="12" cy="12" r="2" />
+    </svg>
+  ),
+  metrics: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="20" x2="12" y2="10" />
+      <line x1="18" y1="20" x2="18" y2="4" />
+      <line x1="6" y1="20" x2="6" y2="16" />
+    </svg>
+  ),
+  tactics: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>
+  ),
+  strategy: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="5" r="2.5" />
+      <circle cx="5" cy="18" r="2.5" />
+      <circle cx="19" cy="18" r="2.5" />
+      <line x1="12" y1="7.5" x2="5" y2="15.5" />
+      <line x1="12" y1="7.5" x2="19" y2="15.5" />
+      <line x1="7.5" y1="18" x2="16.5" y2="18" />
+    </svg>
+  ),
 };
 
 const categoryOrder = ["core", "tactics", "metrics", "strategy"];
@@ -135,6 +167,7 @@ export default function GlossaryPage() {
 
   const grouped = categoryOrder.map((cat) => ({
     label: categoryLabels[cat],
+    icon: categoryIcons[cat],
     items: terms.filter((t) => t.category === cat),
   }));
 
@@ -175,7 +208,25 @@ export default function GlossaryPage() {
           <div key={group.label}>
             <div className="divider" />
             <section className="section">
-              <h2>{group.label}</h2>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '8px',
+                  border: '1px solid var(--border)',
+                  background: 'rgba(212, 201, 144, 0.1)',
+                  color: 'var(--gold)',
+                  flexShrink: 0
+                }}>
+                  <div style={{ width: '20px', height: '20px' }}>
+                    {group.icon}
+                  </div>
+                </div>
+                <h2 style={{ margin: 0 }}>{group.label}</h2>
+              </div>
               <div className="glossary-grid">
                 {group.items.map((t) => (
                   <div key={t.id} id={t.id} className="glossary-card">

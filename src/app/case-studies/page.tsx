@@ -67,6 +67,136 @@ const cases = [
   },
 ];
 
+// Before/After illustration component
+const BeforeAfterIllustration = () => (
+  <div style={{ 
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center',
+    gap: '1.5rem',
+    margin: '1.5rem 0 2rem',
+    padding: '1.5rem',
+    background: 'var(--bg-elevated)',
+    border: '1px solid var(--border)',
+    borderRadius: '8px'
+  }}>
+    {/* Before */}
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+      <span style={{ 
+        fontSize: '10px', 
+        fontWeight: 600, 
+        letterSpacing: '0.1em', 
+        textTransform: 'uppercase',
+        color: 'var(--text-dim)'
+      }}>
+        Before
+      </span>
+      <div style={{
+        width: '80px',
+        height: '96px',
+        borderRadius: '8px',
+        border: '1px solid var(--border)',
+        background: 'var(--bg)',
+        padding: '10px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '6px',
+        position: 'relative'
+      }}>
+        {/* Document icon with eye-off overlay */}
+        <div style={{ height: '8px', width: '40px', borderRadius: '4px', background: 'hsla(38, 32%, 55%, 0.2)' }} />
+        <div style={{ height: '4px', width: '100%', borderRadius: '2px', background: 'var(--border)' }} />
+        <div style={{ height: '4px', width: '48px', borderRadius: '2px', background: 'var(--border)' }} />
+        <div style={{ height: '4px', width: '100%', borderRadius: '2px', background: 'var(--border)' }} />
+        
+        {/* Eye-off icon overlay */}
+        <div style={{ 
+          position: 'absolute', 
+          bottom: '8px', 
+          right: '8px',
+          color: 'var(--text-dim)',
+          opacity: 0.5
+        }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
+            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+            <line x1="1" y1="1" x2="23" y2="23" />
+          </svg>
+        </div>
+      </div>
+      <span style={{ fontSize: '9px', color: 'var(--text-dim)', textAlign: 'center', maxWidth: '90px', lineHeight: '1.3' }}>
+        No AI visibility
+      </span>
+    </div>
+
+    {/* Arrow */}
+    <div style={{ color: 'var(--gold)', flexShrink: 0 }}>
+      <svg width="32" height="16" viewBox="0 0 32 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M0 8 L28 8" />
+        <path d="M23 3 L30 8 L23 13" />
+      </svg>
+    </div>
+
+    {/* After */}
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+      <span style={{ 
+        fontSize: '10px', 
+        fontWeight: 600, 
+        letterSpacing: '0.1em', 
+        textTransform: 'uppercase',
+        color: 'var(--accent-muted)'
+      }}>
+        After
+      </span>
+      <div style={{
+        width: '80px',
+        height: '96px',
+        borderRadius: '8px',
+        border: '1px solid var(--gold)',
+        background: 'rgba(212, 201, 144, 0.05)',
+        padding: '10px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '6px',
+        position: 'relative'
+      }}>
+        {/* Document icon with checkmark */}
+        <div style={{ height: '8px', width: '40px', borderRadius: '4px', background: 'var(--gold)' }} />
+        <div style={{ height: '4px', width: '100%', borderRadius: '2px', background: 'hsla(38, 32%, 55%, 0.3)' }} />
+        <div style={{ height: '4px', width: '48px', borderRadius: '2px', background: 'hsla(38, 32%, 55%, 0.3)' }} />
+        <div style={{ height: '4px', width: '100%', borderRadius: '2px', background: 'hsla(38, 32%, 55%, 0.3)' }} />
+        
+        {/* Checkmark icon */}
+        <div style={{ 
+          position: 'absolute', 
+          bottom: '8px', 
+          right: '8px',
+          color: 'var(--gold)'
+        }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        
+        {/* Citation marks */}
+        <div style={{
+          position: 'absolute',
+          top: '6px',
+          right: '6px',
+          fontSize: '10px',
+          color: 'var(--gold)',
+          opacity: 0.6
+        }}>
+          &ldquo;&rdquo;
+        </div>
+      </div>
+      <span style={{ fontSize: '9px', color: 'var(--accent-muted)', textAlign: 'center', maxWidth: '90px', lineHeight: '1.3' }}>
+        AI-cited authority
+      </span>
+    </div>
+  </div>
+);
+
 export default function CaseStudiesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -121,6 +251,9 @@ export default function CaseStudiesPage() {
                   </div>
                 </div>
               </div>
+
+              {/* Before/After Illustration */}
+              <BeforeAfterIllustration />
 
               <div className="detail-grid">
                 <div className="detail-card">

@@ -99,11 +99,100 @@ export default function ResearchPage() {
         </header>
 
         {/* Stat sections */}
-        {sections.map((section) => (
+        {sections.map((section, sectionIdx) => (
           <div key={section.title}>
             <div className="divider" />
             <section className="section">
               <h2>{section.icon} {section.title}</h2>
+
+              {/* AI Search Adoption - Growth flow illustration */}
+              {sectionIdx === 0 && (
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  margin: '1.5rem 0 2rem',
+                  padding: '1.5rem',
+                  background: 'var(--bg-elevated)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '8px'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', gap: '8px' }}>
+                    {[28, 44, 68, 92].map((h, i) => (
+                      <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+                        <div style={{
+                          width: '32px',
+                          height: `${h}px`,
+                          borderRadius: '4px 4px 0 0',
+                          border: '1px solid var(--border)',
+                          background: `hsla(38, 32%, 55%, ${0.15 + i * 0.1})`
+                        }} />
+                        <span style={{ 
+                          fontSize: '9px', 
+                          color: 'var(--text-dim)', 
+                          fontWeight: 500,
+                          letterSpacing: '0.05em'
+                        }}>
+                          {2023 + i}
+                        </span>
+                      </div>
+                    ))}
+                    <div style={{ 
+                      marginLeft: '12px',
+                      fontSize: '11px',
+                      color: 'var(--text-muted)',
+                      maxWidth: '120px',
+                      lineHeight: '1.4'
+                    }}>
+                      AI search traffic growing 9.7× YoY
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Industry Disruption - Declining bar chart */}
+              {sectionIdx === 2 && (
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  margin: '1.5rem 0 2rem',
+                  padding: '1.5rem',
+                  background: 'var(--bg-elevated)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '8px'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', gap: '8px' }}>
+                    {[92, 72, 56, 40].map((h, i) => (
+                      <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+                        <div style={{
+                          width: '32px',
+                          height: `${h}px`,
+                          borderRadius: '4px 4px 0 0',
+                          border: '1px solid var(--border)',
+                          background: `hsla(38, 32%, 55%, ${0.35 - i * 0.08})`
+                        }} />
+                        <span style={{ 
+                          fontSize: '9px', 
+                          color: 'var(--text-dim)', 
+                          fontWeight: 500,
+                          letterSpacing: '0.05em'
+                        }}>
+                          Q{i + 1}
+                        </span>
+                      </div>
+                    ))}
+                    <div style={{ 
+                      marginLeft: '12px',
+                      fontSize: '11px',
+                      color: 'var(--text-muted)',
+                      maxWidth: '120px',
+                      lineHeight: '1.4'
+                    }}>
+                      Traditional PR revenue decline
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="stat-grid">
                 {section.stats.map((s) => (
                   <div key={s.headline} className="stat-card">
