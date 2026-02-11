@@ -190,6 +190,11 @@ export default function Home() {
           </p>
 
           <div className="origin-block">
+            <img
+              src="https://storage.googleapis.com/authoritytech-prod-assets/public/cdn/Jaxon%20V2.png"
+              alt="Jaxon Parrott, founder of Machine Relations"
+              className="founder-photo"
+            />
             <p className="name">Jaxon Parrott</p>
             <p className="title">
               Founder &amp; CEO, AuthorityTech ·{" "}
