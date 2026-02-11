@@ -152,6 +152,33 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+      <button
+        className="theme-toggle"
+        id="theme-toggle"
+        aria-label="Toggle theme"
+        suppressHydrationWarning
+      >
+        ☀️
+      </button>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              var t = localStorage.getItem('theme');
+              var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              var isDark = t === 'dark' || (!t && prefersDark);
+              if (!isDark) document.documentElement.classList.add('light');
+              var btn = document.getElementById('theme-toggle');
+              btn.textContent = isDark ? '☀️' : '🌙';
+              btn.addEventListener('click', function() {
+                var isLight = document.documentElement.classList.toggle('light');
+                btn.textContent = isLight ? '🌙' : '☀️';
+                localStorage.setItem('theme', isLight ? 'light' : 'dark');
+              });
+            })();
+          `,
+        }}
+      />
       <div className="site-wrapper">
         {/* Hero */}
         <header className="hero">
