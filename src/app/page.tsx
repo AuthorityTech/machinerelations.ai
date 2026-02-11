@@ -203,9 +203,9 @@ export default function Home() {
               </a>
             </p>
             <p className="quote">
-              &ldquo;PR was about convincing editors to give you column inches.
-              Machine Relations is about convincing algorithms to give you
-              citations. The audience changed. The discipline had to
+              &ldquo;PR was about convincing journalists to tell your story.
+              Machine Relations is about convincing algorithms to cite your
+              name. The gatekeepers changed. The discipline had to
               evolve.&rdquo;
             </p>
           </div>
