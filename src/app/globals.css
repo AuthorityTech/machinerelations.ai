@@ -209,6 +209,15 @@ a:hover {
   margin: 2rem 0;
 }
 
+.origin-block .founder-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid var(--border);
+}
+
 .origin-block .name {
   font-family: var(--serif);
   font-size: 1.1rem;
