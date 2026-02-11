@@ -18,7 +18,7 @@ export default function Home() {
           name: "Marketing & Communications Disciplines",
           url: "https://machinerelations.ai",
         },
-        creator: { "@id": "https://jaxonparrott.com/#person" },
+
       },
       {
         "@type": "Person",
@@ -29,6 +29,7 @@ export default function Home() {
           "Creator of Machine Relations (MR). Founder of AuthorityTech, the first AI-native Machine Relations agency. Entrepreneur Magazine contributing author. Led earned media for 20+ unicorn startups.",
         url: "https://jaxonparrott.com",
         worksFor: { "@id": "https://authoritytech.io/#organization" },
+        knowsAbout: [{ "@id": "https://machinerelations.ai/#term" }],
         sameAs: [
           "https://www.linkedin.com/in/jaxon-parrott-b91838128/",
           "https://x.com/jaxonparrott",
