@@ -62,7 +62,20 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <nav className="site-nav">
+          <div className="nav-inner">
+            <a href="/" className="nav-logo">MR</a>
+            <div className="nav-links">
+              <a href="/glossary">Glossary</a>
+              <a href="/stack">Stack</a>
+              <a href="/research">Research</a>
+              <a href="/case-studies">Case Studies</a>
+            </div>
+          </div>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
